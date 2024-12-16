@@ -281,7 +281,8 @@ end;
 % right and bottom (left and top are negative, easy!) Then return a flag
 % (column of -1's) to signal invalid request UV. Sigh. 
 
-cam = DBGetCameraByImage( filename );
+% cam = DBGetCameraByImage( filename );
+cam = []
 % if no cam data found, assume umax and vmax are for Scorpion 
 if isempty(cam) 
 	umax = 1280; vmax = 960;

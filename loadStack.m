@@ -111,10 +111,11 @@ if ~strcmp(filename, lsCachedFile)
 		loadStackFile( filename );
 	lsCachedFile = filename;
 	% get camera data for width, height
-	lsCache.cam = DBGetCameraByImage( filename );
+% 	lsCache.cam = DBGetCameraByImage( filename );
+    lsCache.cam = []
 	% if no cam data found, assume umax and vmax are for Scorpion 
 	if isempty(lsCache.cam) 
-		lsCache.umax = 1280; lsCache.vmax = 960;
+		lsCache.umax = 2048; lsCache.vmax = 1536;
 	else
 		% look for IP data for width and height
 		ip = DBGetTableEntry('IP','id', lsCache.cam.IPID );
